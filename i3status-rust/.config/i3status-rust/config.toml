@@ -1,0 +1,71 @@
+[theme]
+theme = "native"
+[theme.overrides]
+idle_fg = "#abb2bf"
+info_fg = "#56b6c2"
+good_fg = "#98c379"
+warning_fg = "#e5c07b"
+critical_fg = "#e06c75"
+
+[icons]
+icons = "material-nf"
+[icons.overrides]
+#music = "\U000f075a" # nf-mdi-music_note
+
+[[block]]
+block = "music"
+format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
+player = ["spotify", "mpd"]
+
+[[block.click]]
+button = "left"
+action = "play_pause"
+
+[[block]]
+block = "net"
+device = "wg0"
+missing_format = ""
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon $available "
+
+[[block]]
+block = "memory"
+format = " $icon $mem_used_percents "
+
+[[block]]
+block = "cpu"
+interval = 5
+merge_with_next = true
+
+[[block]]
+block = "temperature"
+interval = 10
+chip = "coretemp-isa-0000"
+format = "$average $max"
+
+[[block]]
+block = "amd_gpu"
+merge_with_next = true
+
+[[block]]
+block = "temperature"
+interval = 10
+chip = "amdgpu-pci-0300"
+format = "$average $max"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 5
+[block.format]
+full = " $icon $timestamp.datetime(f:'%a %d/%m %I:%M %p')"

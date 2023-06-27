@@ -1,0 +1,28 @@
+font=MesloLGS Nerd Font 10
+default-timeout=5000
+height=300
+width=350
+icon-path=/usr/share/icons/Papirus-Dark
+
+progress-color=over #61afef
+
+[urgency="low"]
+background-color=#282c34
+text-color=#abb2bf
+border-color=#545862
+
+[urgency="normal"]
+background-color=#282c34
+text-color=#61afef
+border-color=#545862
+
+[urgency="critical"]
+background-color=#900000
+text-color=#ffffff
+border-color=#aaaaaa
+default-timeout=0
+
+[category=osd]
+anchor=center
+default-timeout=2000
+text-color=#ffffff
