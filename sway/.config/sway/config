@@ -23,8 +23,8 @@ set $font MesloLGS Nerd Font
 # Application launcher
 set $menu fuzzel --log-level=warning
 
-font pango:$font 0
-titlebar_padding 3 3
+font pango:$font 0.1
+titlebar_padding 2 2
 default_border pixel 1
 default_floating_border pixel 1
 smart_borders no_gaps
@@ -33,7 +33,7 @@ focus_follows_mouse no
 ### Output configuration
 #
 output DP-1 {
-  bg ~/Pictures/wallpapers/cat.jpg fill
+  bg ~/.config/sway/wall.jpg fill
   mode 3440x1440@143.975Hz 
 }
 
@@ -70,7 +70,7 @@ input "type:pointer" {
 bindsym $mod+Return exec $term
 
 # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+c kill
 
 # Start your launcher
 bindsym $mod+d exec $menu
@@ -97,7 +97,7 @@ bindsym $mod+shift+delete exec clipman clear --all --notify -t CUSTOM -T '$menu 
 floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+shift+c reload
+bindsym $mod+shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
 bindsym $mod+shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
@@ -318,11 +318,11 @@ bar {
     statusline $base04
 
     # State             Border  BG      Text
-    # focused_workspace   $base0D $base00 $base0D
-    # active_workspace    $base05 $base03 $base00
-    # inactive_workspace  $base03 $base01 $base05
-    # urgent_workspace    $base08 $base08 $base00
-    # binding_mode        $base00 $base0A $base00
+    focused_workspace   $base0D $base00 $base0D
+    active_workspace    $base05 $base03 $base00
+    inactive_workspace  $base03 $base01 $base05
+    urgent_workspace    $base08 $base08 $base00
+    binding_mode        $base00 $base0A $base00
   }
 }
 
@@ -337,7 +337,7 @@ for_window [shell="xdg_shell"] title_format "%title"
 
 # Gtk settings
 exec_always {
-  gsettings set org.gnome.desktop.interface font-name "IBM Plex Sans 10"
+  gsettings set org.gnome.desktop.interface font-name "DejaVu Sans 10"
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
   #gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
   gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
