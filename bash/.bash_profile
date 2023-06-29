@@ -4,6 +4,8 @@
 
 eval $(keychain --eval --noask --quiet id_ed25519)
 
+export VDPAU_DRIVER=radeonsi
+
 if [ -z "${WAYLAND_DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	export XDG_CURRENT_DESKTOP=sway
 	export XDG_SESSION_TYPE=wayland
