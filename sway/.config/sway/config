@@ -330,6 +330,7 @@ bar {
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable; sticky enable
 for_window [title="fzf-switcher"] floating enable
+for_window [app_id="org.gnome.Calculator"] floating enable; border csd
 
 # Change title of xwayland apps
 for_window [shell=".*"] title_format "[%shell] %title"
@@ -337,7 +338,7 @@ for_window [shell="xdg_shell"] title_format "%title"
 
 # Gtk settings
 exec_always {
-  gsettings set org.gnome.desktop.interface font-name "DejaVu Sans 10"
+  gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
   #gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
   gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
