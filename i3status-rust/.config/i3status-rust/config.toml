@@ -9,14 +9,11 @@ critical_fg = "#e06c75"
 
 [icons]
 icons = "material-nf"
-[icons.overrides]
-#music = "\U000f075a" # nf-mdi-music_note
 
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
-player = ["spotify", "mpd"]
-
+interface_name_exclude = ["playerctld", "firefox", "chromium"]
 [[block.click]]
 button = "left"
 action = "play_pause"
@@ -24,7 +21,13 @@ action = "play_pause"
 [[block]]
 block = "net"
 device = "wg0"
+format = " $icon $speed_up.eng(prefix:K)↑ $speed_down.eng(prefix:K)↓ "
 missing_format = ""
+
+[[block]]
+block = "net"
+device = "wlan0"
+format = " $icon $signal_strength $speed_up.eng(prefix:K)↑ $speed_down.eng(prefix:K)↓ "
 
 [[block]]
 block = "disk_space"
