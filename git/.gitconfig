@@ -1,0 +1,5 @@
+[user]
+	name = Angel Segarra
+	email = angel.segara@gmail.com
+[core]
+	editor = nvim
