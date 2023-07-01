@@ -267,12 +267,13 @@ mode "$mode_system" {
 }
 bindsym $mod+escape mode "$mode_system"
 
-set $mode_noti Notifications (Return) invoke, (r) restore (d) dismiss, (Shift+d) dismiss all
+set $mode_noti Notifications (Return) invoke, (r) restore (d) dismiss, (Shift+d) dismiss all, (p) toggle pause
 mode "$mode_noti" {
-  bindsym return exec makoctl invoke; exec makoctl dismiss; mode "default"
-  bindsym d exec makoctl dismiss; mode "default"
-  bindsym shift+d exec makoctl dismiss -a; mode "default"
-  bindsym r exec makoctl restore
+  bindsym return exec dunstctl action; mode "default"
+  bindsym d exec dunstctl close; mode "default"
+  bindsym shift+d exec dunstctl close-all; mode "default"
+  bindsym r exec dunstctl history-pop
+  bindsym p exec dunstctl set-paused toggle; mode "default"
   bindsym escape mode "default"
 }
 bindsym $mod+n mode "$mode_noti"
@@ -311,6 +312,7 @@ bar {
   status_command i3status-rs
   tray_output *
   icon_theme Papirus-Dark
+  separator_symbol "/"
   colors {
 
     background $base00
@@ -336,6 +338,10 @@ for_window [app_id="org.gnome.Calculator"] floating enable; border csd
 for_window [shell=".*"] title_format "[%shell] %title"
 for_window [shell="xdg_shell"] title_format "%title"
 
+# Workspace assignments
+assign [class="Vmware-view"] 9
+assign [class="Spotify"] 2
+
 # Gtk settings
 exec_always {
   gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
@@ -348,7 +354,7 @@ exec_always {
 #
 # Autostart apps
 #
-exec mako
+exec dunst
 exec gammastep
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec playerctld daemon

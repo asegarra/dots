@@ -13,7 +13,7 @@ icons = "material-nf"
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
-interface_name_exclude = ["playerctld", "firefox", "chromium"]
+player = ["spotify"]
 [[block.click]]
 button = "left"
 action = "play_pause"
@@ -66,6 +66,10 @@ format = "$average $max"
 
 [[block]]
 block = "sound"
+
+[[block]]
+block = "notify"
+format = " $icon {($notification_count.eng(w:1)) |}"
 
 [[block]]
 block = "time"
