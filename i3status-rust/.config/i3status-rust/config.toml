@@ -21,7 +21,7 @@ action = "play_pause"
 [[block]]
 block = "net"
 device = "wg0"
-format = " $icon $speed_up.eng(prefix:K)↑ $speed_down.eng(prefix:K)↓ "
+format = " $icon $speed_down.eng(prefix:K)↓ $speed_up.eng(prefix:K)↑ "
 missing_format = ""
 
 [[block]]
