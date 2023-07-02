@@ -27,7 +27,7 @@ missing_format = ""
 [[block]]
 block = "net"
 device = "wlan0"
-format = " $icon $signal_strength $speed_up.eng(prefix:K)↑ $speed_down.eng(prefix:K)↓ "
+format = " $icon $signal_strength $speed_down.eng(prefix:K)↓ $speed_up.eng(prefix:K)↑ "
 
 [[block]]
 block = "disk_space"
