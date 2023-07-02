@@ -2,10 +2,10 @@
 theme = "native"
 [theme.overrides]
 idle_fg = "#abb2bf"
-info_fg = "#56b6c2"
-good_fg = "#98c379"
-warning_fg = "#e5c07b"
-critical_fg = "#e06c75"
+info_fg = "#11a8cd"
+good_fg = "#a1b56c"
+warning_fg = "#f7ca88"
+critical_fg = "#ab4642"
 
 [icons]
 icons = "material-nf"
