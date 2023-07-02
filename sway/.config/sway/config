@@ -33,7 +33,7 @@ focus_follows_mouse no
 ### Output configuration
 #
 output DP-1 {
-  bg ~/.config/sway/wall.jpg fill
+  bg ~/.config/sway/starry-night.jpg fill
   mode 3440x1440@143.975Hz 
 }
 
