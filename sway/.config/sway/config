@@ -326,8 +326,8 @@ assign [class="Spotify"] 2
 exec_always {
   gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
-  gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  #gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
+  #gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 }
 
 #

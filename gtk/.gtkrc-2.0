@@ -1,7 +1,7 @@
-gtk-font-name="Cantarell 11"
+gtk-font-name="Cantarell 10"
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintslight"
 gtk-xft-rgba="rgb"
-gtk-theme-name="adw-gtk3-dark"
+#gtk-theme-name="adw-gtk3-dark"
 #gtk-icon-theme-name="Papirus-Light"
