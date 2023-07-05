@@ -27,7 +27,7 @@
     width = 400
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+    height = 120
 
     # Position the notification in the top right corner
     origin = top-right
@@ -196,7 +196,7 @@
     enable_recursive_icon_lookup = true
 
     # Set icon theme (only used for recursive icon lookup)
-    icon_theme = Papirus-Dark
+    icon_theme = "Papirus-Dark, Adwaita"
     # You can also set multiple icon themes, with the leftmost one being used first.
     # icon_theme = "Adwaita, breeze"
 
@@ -316,8 +316,8 @@
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
+    background = "#282c34"
+    foreground = "#11a8cd"
     highlight = "#11a8cd"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable

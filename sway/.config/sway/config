@@ -41,14 +41,8 @@ output DP-1 {
 set $locker swaylock -f -c 000000 
 
 ### Idle configuration
-exec swayidle -w \
-       timeout 15 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
-         resume 'swaymsg "output * dpms on"' \
-       timeout 600 'if ! pgrep swaylock; then $locker; fi' \
-       timeout 615 'swaymsg "output * dpms off"' \
-       timeout 1800 'systemctl suspend' \
-       before-sleep 'playerctl stop' \
-       before-sleep '$locker' 
+exec swayidle -w
+
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 15 seconds, and turn your screens back on when
@@ -319,6 +313,7 @@ for_window [shell=".*"] title_format "[%shell] %title"
 for_window [shell="xdg_shell"] title_format "%title"
 
 # Workspace assignments
+for_window [workspace = "9"] layout tabbed 
 assign [class="Vmware-view"] 9
 assign [class="Spotify"] 2
 
