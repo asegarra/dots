@@ -1,37 +1,28 @@
 return {
-  "nvim-neo-tree/neo-tree.nvim",
-  opts = {
-    default_component_configs = {
-      icon = {
-        folder_empty = "󰜌",
-        folder_empty_open = "󰜌",
-      },
-      git_status = {
-        symbols = {
-          renamed = "󰁕",
-          unstaged = "󰄱",
+    -- Detect tabstop and shiftwidth automatically
+    'tpope/vim-sleuth',
+    {
+        -- Add indentation guides even on blank lines
+        'lukas-reineke/indent-blankline.nvim',
+        -- Enable `lukas-reineke/indent-blankline.nvim`
+        -- See `:help indent_blankline.txt`
+        opts = {
+            char = '┊',
+            show_trailing_blankline_indent = false,
         },
-      },
     },
-    document_symbols = {
-      kinds = {
-        File = { icon = "󰈙", hl = "Tag" },
-        Namespace = { icon = "󰌗", hl = "Include" },
-        Package = { icon = "󰏖", hl = "Label" },
-        Class = { icon = "󰌗", hl = "Include" },
-        Property = { icon = "󰆧", hl = "@property" },
-        Enum = { icon = "󰒻", hl = "@number" },
-        Function = { icon = "󰊕", hl = "Function" },
-        String = { icon = "󰀬", hl = "String" },
-        Number = { icon = "󰎠", hl = "Number" },
-        Array = { icon = "󰅪", hl = "Type" },
-        Object = { icon = "󰅩", hl = "Type" },
-        Key = { icon = "󰌋", hl = "" },
-        Struct = { icon = "󰌗", hl = "Type" },
-        Operator = { icon = "󰆕", hl = "Operator" },
-        TypeParameter = { icon = "󰊄", hl = "Type" },
-        StaticMethod = { icon = "󰠄 ", hl = "Function" },
-      },
+    -- seamless tmux navigation
+    'christoomey/vim-tmux-navigator',
+
+    -- "gc" to comment visual regions/lines
+    { 'numToStr/Comment.nvim', opts = {} },
+
+    -- Surround plugin
+    {
+        'echasnovski/mini.surround',
+        version = '*',
+        config = function()
+            require('mini.surround').setup()
+        end
     },
-  },
 }

@@ -1,0 +1,6 @@
+{
+  "coc.preferences.formatOnSave": true,
+  "diagnostic.checkCurrentLine": true,
+  "typescript.format.enable": false,
+  "snippets.ultisnips.pythonPrompt": false
+}
