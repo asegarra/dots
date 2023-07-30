@@ -3,11 +3,10 @@ return {
     { 'folke/which-key.nvim', opts = {} },
 
     {
-        'sainnhe/sonokai',
+        'navarasu/onedark.nvim',
         priority = 1000,
         config = function()
-            vim.o.background = 'dark'
-            vim.cmd.colorscheme 'sonokai'
+           vim.cmd.colorscheme 'onedark' 
         end,
     },
 
@@ -17,7 +16,8 @@ return {
         -- See `:help lualine.txt`
         opts = {
             options = {
-                theme = 'sonokai',
+                icons_enabled = false,
+                theme = 'onedark',
                 section_separators = '',
             },
         },

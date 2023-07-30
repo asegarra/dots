@@ -19,10 +19,6 @@ return {
 
     -- Surround plugin
     {
-        'echasnovski/mini.surround',
-        version = '*',
-        config = function()
-            require('mini.surround').setup()
-        end
+        'tpope/vim-surround',
     },
 }
