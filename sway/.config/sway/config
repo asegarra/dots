@@ -272,7 +272,7 @@ mode "$mode_noti" {
 }
 bindsym $mod+n mode "$mode_noti"
 
-set $mode_screenshot  (s) screen, (a) area, (w) window (Shift for )
+set $mode_screenshot 󰄄 (s) screen, (a) area, (w) window (Shift for  )
 mode "$mode_screenshot" {
   bindsym s exec "$grimshot" --notify copy screen; mode "default"
   bindsym a exec "$grimshot" --notify copy area; mode "default"
@@ -292,7 +292,8 @@ bindsym print mode "$mode_screenshot"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-  font pango:$font, Font Awesome 6 Free 9
+  font pango:$font 9
+  position top
   status_command i3status-rs
   tray_output *
   icon_theme Papirus-Dark
@@ -301,6 +302,8 @@ bar {
     separator #abb2bf
   }
 }
+
+# bar swaybar_command waybar
 
 # App rules
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
@@ -319,10 +322,10 @@ assign [class="Spotify"] 2
 
 # Gtk settings
 exec_always {
-  gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
+  # gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
   #gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-  #gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 }
 
 #
@@ -331,7 +334,7 @@ exec_always {
 exec dunst
 exec gammastep
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec playerctld daemon
+# exec playerctld daemon
 #exec wl-paste -t text --watch clipman store --no-persist
 #exec poweralertd
 #exec_always xrdb .Xresources

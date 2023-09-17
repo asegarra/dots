@@ -3,10 +3,10 @@ return {
     { 'folke/which-key.nvim', opts = {} },
 
     {
-        'navarasu/onedark.nvim',
+        'folke/tokyonight.nvim',
         priority = 1000,
         config = function()
-           vim.cmd.colorscheme 'onedark' 
+           vim.cmd.colorscheme 'tokyonight-moon' 
         end,
     },
 
@@ -17,7 +17,7 @@ return {
         opts = {
             options = {
                 icons_enabled = false,
-                theme = 'onedark',
+                theme = 'auto',
                 section_separators = '',
             },
         },

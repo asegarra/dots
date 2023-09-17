@@ -2,8 +2,8 @@
 # ~/.bash_profile
 #
 
-# eval $(keychain --eval --noask --quiet id_ed25519)
-eval $(ssh-agent)
+eval $(keychain --eval --noask --quiet id_ed25519)
+#eval $(ssh-agent)
 
 export VDPAU_DRIVER=radeonsi
 
