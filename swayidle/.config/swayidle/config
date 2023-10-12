@@ -1,6 +1,6 @@
-timeout 15 'if pgrep -x swaylock; then swaymsg output * dpms off; fi' resume 'swaymsg output * dpms on'
+timeout 15 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' resume 'swaymsg "output * dpms on"'
 timeout 600 'if ! pgrep swaylock; then swaylock -f -c 000000; fi'
-timeout 615 'swaymsg output * dpms off'
+timeout 615 'swaymsg "output * dpms off"'
 timeout 1800 'systemctl suspend'
 before-sleep 'playerctl stop'
 before-sleep 'swaylock -f -c 000000'

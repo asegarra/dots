@@ -14,7 +14,7 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 
 set $grimshot "/usr/share/sway/scripts/grimshot"
 
@@ -33,7 +33,7 @@ focus_follows_mouse no
 ### Output configuration
 #
 output DP-1 {
-  bg ~/.config/sway/starry-night.jpg fill
+  bg ~/.config/sway/wallpapers/blobs-d.svg fill
   mode 3440x1440@143.975Hz 
 }
 
@@ -73,7 +73,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+shift+b exec firefox
 
 # File manager
-bindsym $mod+shift+f exec nautilus
+bindsym $mod+shift+f exec thunar
 
 # Music
 bindsym $mod+shift+m exec $term -t ncmpcpp -e ncmpcpp
@@ -263,7 +263,7 @@ bindsym $mod+escape mode "$mode_system"
 
 set $mode_noti Notifications (Return) invoke, (r) restore (d) dismiss, (Shift+d) dismiss all, (p) toggle pause
 mode "$mode_noti" {
-  bindsym return exec dunstctl action; mode "default"
+  bindsym return exec dunstctl invoke; mode "default"
   bindsym d exec dunstctl close; mode "default"
   bindsym shift+d exec dunstctl close-all; mode "default"
   bindsym r exec dunstctl history-pop
@@ -325,7 +325,7 @@ exec_always {
   # gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
   #gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-  gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  #gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 }
 
 #
