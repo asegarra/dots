@@ -10,10 +10,6 @@ critical_fg = "#ab4642"
 [icons]
 icons = "material-nf"
 
-# [[block]]
-# block = "focused_window"
-# format = "$title.str(max_w:50) |"
-
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
@@ -31,7 +27,8 @@ missing_format = ""
 [[block]]
 block = "net"
 device = "wlo1"
-format = " $icon $signal_strength $speed_down.eng(prefix:K)↓ $speed_up.eng(prefix:K)↑ "
+format = " $icon $speed_down.eng(prefix:K)↓ $speed_up.eng(prefix:K)↑ "
+inactive_format = " $icon down"
 
 [[block]]
 block = "disk_space"
@@ -70,10 +67,6 @@ format = "$average $max"
 
 [[block]]
 block = "sound"
-
-[[block]]
-block = "notify"
-format = " $icon {($notification_count.eng(w:1)) |}"
 
 [[block]]
 block = "time"

@@ -260,13 +260,12 @@ mode "$mode_system" {
 }
 bindsym $mod+escape mode "$mode_system"
 
-set $mode_noti Notifications (Return) invoke, (r) restore (d) dismiss, (Shift+d) dismiss all, (p) toggle pause
+set $mode_noti Notifications (Return) invoke, (r) restore (d) dismiss, (Shift+d) dismiss all
 mode "$mode_noti" {
-  bindsym return exec dunstctl invoke; mode "default"
-  bindsym d exec dunstctl close; mode "default"
-  bindsym shift+d exec dunstctl close-all; mode "default"
-  bindsym r exec dunstctl history-pop
-  bindsym p exec dunstctl set-paused toggle; mode "default"
+  bindsym return exec makoctl invoke; mode "default"
+  bindsym d exec makoctl dismiss; mode "default"
+  bindsym shift+d exec makoctl dismiss --all; mode "default"
+  bindsym r exec makoctl restore
   bindsym escape mode "default"
 }
 bindsym $mod+n mode "$mode_noti"
@@ -317,7 +316,7 @@ for_window [shell="xdg_shell"] title_format "%title"
 # Workspace assignments
 for_window [workspace = "9"] layout tabbed 
 assign [class="Vmware-view"] 9
-assign [class="Spotify"] 2
+assign [class="Spotify"] 8
 
 # Gtk settings
 exec_always {
@@ -330,10 +329,10 @@ exec_always {
 #
 # Autostart apps
 #
-exec dunst
+exec mako
 exec gammastep
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-# exec playerctld daemon
+exec playerctld daemon
 #exec wl-paste -t text --watch clipman store --no-persist
 #exec poweralertd
 #exec_always xrdb .Xresources
