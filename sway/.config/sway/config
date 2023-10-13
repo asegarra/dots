@@ -24,9 +24,8 @@ set $font MesloLGS Nerd Font
 set $menu fuzzel --log-level=warning
 
 font pango:$font 9
-titlebar_padding 2 2
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 smart_borders no_gaps
 focus_follows_mouse no
 
