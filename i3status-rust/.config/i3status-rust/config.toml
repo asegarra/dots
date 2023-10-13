@@ -10,6 +10,10 @@ critical_fg = "#ab4642"
 [icons]
 icons = "material-nf"
 
+# [[block]]
+# block = "focused_window"
+# format = "$title.str(max_w:50) |"
+
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
@@ -20,7 +24,7 @@ action = "play_pause"
 
 [[block]]
 block = "net"
-device = "wg0"
+device = "oracle"
 format = " $icon $speed_down.eng(prefix:K)↓ $speed_up.eng(prefix:K)↑ "
 missing_format = ""
 
