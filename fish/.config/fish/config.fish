@@ -9,7 +9,6 @@ if status is-login
     end
 end
 
-
 if not status --is-interactive
     exit
 end
@@ -22,10 +21,15 @@ if test -e ~/.asdf/asdf.fish
     source ~/.asdf/asdf.fish
 end
 
+if test -e /usr/share/doc/pkgfile/command-not-found.fish
+    source /usr/share/doc/pkgfile/command-not-found.fish
+end
+
 alias wgu="sudo wg-quick up wg0"
 alias wgd="sudo wg-quick down wg0"
 alias lg="lazygit"
 alias pn="pnpm"
+alias man="batman"
 
 zoxide init fish | source
 fnm env --use-on-cd | source
