@@ -4,12 +4,8 @@ return {
     {
         -- Add indentation guides even on blank lines
         'lukas-reineke/indent-blankline.nvim',
-        -- Enable `lukas-reineke/indent-blankline.nvim`
-        -- See `:help indent_blankline.txt`
-        opts = {
-            char = '┊',
-            show_trailing_blankline_indent = false,
-        },
+        main = "ibl",
+        opts = {},
     },
     -- seamless tmux navigation
     'christoomey/vim-tmux-navigator',
@@ -21,4 +17,8 @@ return {
     {
         'tpope/vim-surround',
     },
+
+    {
+        'tpope/vim-unimpaired',
+    }
 }
