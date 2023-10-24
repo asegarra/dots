@@ -18,8 +18,8 @@ border-color=#545862
 
 [urgency="critical"]
 background-color=#900000
-text-color=#ffffff
-border-color=#aaaaaa
+text-color=#abb2bf
+border-color=#545862
 default-timeout=0
 
 [category=osd]
