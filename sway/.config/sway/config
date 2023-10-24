@@ -23,7 +23,8 @@ set $font MesloLGS Nerd Font
 # Application launcher
 set $menu fuzzel --log-level=warning
 
-font pango:$font 9
+font pango:$font 1
+for_window [class=".*"] titlebar_padding 1 2; title_format " "
 default_border pixel 2
 default_floating_border pixel 2
 smart_borders no_gaps
