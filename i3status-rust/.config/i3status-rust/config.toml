@@ -13,7 +13,6 @@ icons = "material-nf"
 [[block]]
 block = "music"
 format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
-player = ["spotify"]
 [[block.click]]
 button = "left"
 action = "play_pause"
