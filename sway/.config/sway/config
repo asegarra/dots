@@ -285,6 +285,15 @@ mode "$mode_screenshot" {
 }
 bindsym print mode "$mode_screenshot"
 
+set $mode_vpn VPN: (u) up, (d) down
+mode "$mode_vpn" {
+  bindsym u exec "nmcli connection up oracle"; mode "default"
+  bindsym d exec "nmcli connection down oracle"; mode "default"
+  bindsym escape mode "default"; mode "default"
+  bindsym return mode "default"; mode "default"
+}
+bindsym $mod+o mode "$mode_vpn"
+
 #
 # Status Bar:
 #
