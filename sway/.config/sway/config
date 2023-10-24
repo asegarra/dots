@@ -310,17 +310,11 @@ bar {
   }
 }
 
-# bar swaybar_command waybar
-
 # App rules
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
 for_window [app_id="firefox" title="^Picture-in-Picture$"] floating enable; sticky enable
 for_window [title="fzf-switcher"] floating enable
 for_window [app_id="org.gnome.Calculator"] floating enable; border csd
-
-# Change title of xwayland apps
-for_window [shell=".*"] title_format "[%shell] %title"
-for_window [shell="xdg_shell"] title_format "%title"
 
 # Workspace assignments
 for_window [workspace = "9"] layout tabbed 
@@ -329,10 +323,8 @@ assign [class="Spotify"] 8
 
 # Gtk settings
 exec_always {
-  # gsettings set org.gnome.desktop.interface font-name "Cantarell 10"
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
-  #gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita'
-  #gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+  gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
 }
 
 #
@@ -345,7 +337,6 @@ exec /usr/lib/geoclue-2.0/demos/agent
 exec playerctld daemon
 #exec wl-paste -t text --watch clipman store --no-persist
 #exec poweralertd
-#exec_always xrdb .Xresources
 
 # Additional config
 include /etc/sway/config.d/*
