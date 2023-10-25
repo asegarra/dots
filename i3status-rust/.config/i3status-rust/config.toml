@@ -8,11 +8,18 @@ warning_fg = "#f7ca88"
 critical_fg = "#ab4642"
 
 [icons]
-icons = "material-nf"
+icons = "none"
+[icons.overrides]
+music = "\U000f075a" # nf-md-music
+music_next = "\U000f04ad" # nf-md-skip_next
+music_pause = "\U000f03e4" # nf-md-pause
+music_play = "\U000f040a" # nf-md-play
+music_prev = "\U000f04ae" # nf-md-skip_previous
+
 
 [[block]]
 block = "music"
-format = " $icon {$combo.str(max_w:35,rot_interval:0.5) $play |} "
+format = " $icon {$combo.str(max_w:40,rot_interval:0.5) $play |} "
 [[block.click]]
 button = "left"
 action = "play_pause"
@@ -25,9 +32,8 @@ missing_format = ""
 
 [[block]]
 block = "net"
-device = "wlo1"
 format = " $icon $speed_down.eng(prefix:K)↓ $speed_up.eng(prefix:K)↑ "
-inactive_format = " $icon down"
+inactive_format = " $icon x"
 
 [[block]]
 block = "disk_space"
@@ -37,7 +43,7 @@ alert_unit = "GB"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = " $icon $available "
+format = " $available "
 
 [[block]]
 block = "memory"
@@ -52,7 +58,7 @@ merge_with_next = true
 block = "temperature"
 interval = 10
 chip = "coretemp-isa-0000"
-format = "$average $max"
+format = "$average $max "
 
 [[block]]
 block = "amd_gpu"
@@ -62,7 +68,7 @@ merge_with_next = true
 block = "temperature"
 interval = 10
 chip = "amdgpu-pci-0300"
-format = "$average $max"
+format = "$average $max "
 
 [[block]]
 block = "sound"
@@ -71,4 +77,4 @@ block = "sound"
 block = "time"
 interval = 5
 [block.format]
-full = " $icon $timestamp.datetime(f:'%a %d/%m %I:%M %p')"
+full = " $timestamp.datetime(f:'%a %d/%m %I:%M %p')"
