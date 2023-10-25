@@ -77,4 +77,4 @@ block = "sound"
 block = "time"
 interval = 5
 [block.format]
-full = " $timestamp.datetime(f:'%a %d/%m %I:%M %p')"
+full = " $timestamp.datetime(f:'%a %m/%d %I:%M %p')"
