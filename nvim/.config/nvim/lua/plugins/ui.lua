@@ -26,7 +26,6 @@ return {
             options = {
                 icons_enabled = false,
                 theme = 'auto',
-                -- section_separators = '',
             },
         },
     },
