@@ -2,11 +2,19 @@ return {
     -- Useful plugin to show you pending keybinds.
     { 'folke/which-key.nvim', opts = {} },
 
+    -- {
+    --     'folke/tokyonight.nvim',
+    --     priority = 1000,
+    --     config = function()
+    --        vim.cmd.colorscheme 'tokyonight-moon' 
+    --     end,
+    -- },
+
     {
-        'folke/tokyonight.nvim',
+        'shaunsingh/nord.nvim',
         priority = 1000,
         config = function()
-           vim.cmd.colorscheme 'tokyonight-moon' 
+            vim.cmd.colorscheme 'nord'
         end,
     },
 
@@ -18,7 +26,7 @@ return {
             options = {
                 icons_enabled = false,
                 theme = 'auto',
-                section_separators = '',
+                -- section_separators = '',
             },
         },
     },
