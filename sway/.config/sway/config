@@ -24,8 +24,7 @@ set $font MesloLGS Nerd Font
 set $menu fuzzel --log-level=warning
 
 # Minimize title bar
-font pango:$font 1
-for_window [class=".*"] titlebar_padding 1 2; title_format " "
+font pango:$font 0
 
 default_border pixel 2
 default_floating_border pixel 2
