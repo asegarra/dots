@@ -301,15 +301,16 @@ bindsym $mod+o mode "$mode_vpn"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-  font pango:$font 9
-  position top
-  status_command i3status-rs
-  tray_output *
-  icon_theme Papirus-Dark
-  separator_symbol "|"
-  colors {
-    separator #abb2bf
-  }
+  # font pango:$font 9
+  # position top
+  # status_command i3status-rs
+  # tray_output *
+  # icon_theme Papirus-Dark
+  # separator_symbol "|"
+  # colors {
+  #   separator #abb2bf
+  # }
+  swaybar_command waybar
 }
 
 # App rules
