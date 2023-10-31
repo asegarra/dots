@@ -1,13 +1,13 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
+    // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["mpris", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "sway/language", "clock", "tray"],
+    "modules-right": ["mpris", "idle_inhibitor", "pulseaudio","network#vpn", "network", "cpu", "memory", "temperature", "sway/language", "clock", "tray"],
     "mpris": {
       "format": "{player_icon} {artist} - {title}",
       "format-paused": "{status_icon} <i>{artist} - {title}</i>",
@@ -60,8 +60,14 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
+    "network#vpn": {
+        "interface": "oracle", 
+        "format": "{ifname} 󰖂",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-disconnected": "",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{ifname} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
         "tooltip-format": "{ifname} via {gwaddr} ",

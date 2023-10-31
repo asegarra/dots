@@ -123,3 +123,7 @@ button:hover {
 #scratchpad.empty {
   background-color: transparent;
 }
+
+#network.vpn {
+  color: #a1b56c;
+}
