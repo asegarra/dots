@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad"],
     "modules-center": ["sway/window"],
-    "modules-right": ["mpris", "idle_inhibitor", "pulseaudio","network#vpn", "network", "cpu", "memory", "temperature", "sway/language", "clock", "tray"],
+    "modules-right": ["custom/media", "idle_inhibitor", "pulseaudio","network#vpn", "network", "cpu", "memory", "temperature", "sway/language", "clock", "tray"],
     "mpris": {
       "format": "{player_icon} {artist} - {title}",
       "format-paused": "{status_icon} <i>{artist} - {title}</i>",
@@ -94,5 +94,17 @@
         },
         "on-click": "pavucontrol"
     },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 50,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
 }
 

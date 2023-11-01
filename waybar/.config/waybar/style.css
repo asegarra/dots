@@ -61,6 +61,7 @@ button:hover {
 #temperature,
 #network,
 #pulseaudio,
+#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -110,6 +111,10 @@ button:hover {
 }
 
 #mpris {
+  color: #11a8cd;
+}
+
+#custom-media {
   color: #11a8cd;
 }
 
