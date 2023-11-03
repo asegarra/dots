@@ -10,14 +10,28 @@ return {
     --     end,
     -- },
 
+    -- {
+    --     'shaunsingh/nord.nvim',
+    --     priority = 1000,
+    --     config = function()
+    --         vim.cmd.colorscheme 'nord'
+    --     end,
+    -- },
+
     {
-        'shaunsingh/nord.nvim',
+        'navarasu/onedark.nvim',
         priority = 1000,
+        opts = {
+            style = 'darker'
+        },
         config = function()
-            vim.cmd.colorscheme 'nord'
+            require('onedark').setup {
+                style = 'darker'
+            }
+            require('onedark').load()
         end,
     },
-
+    
     {
         -- Set lualine as statusline
         'nvim-lualine/lualine.nvim',
