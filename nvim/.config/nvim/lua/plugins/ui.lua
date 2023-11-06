@@ -10,27 +10,27 @@ return {
     --     end,
     -- },
 
-    -- {
-    --     'shaunsingh/nord.nvim',
-    --     priority = 1000,
-    --     config = function()
-    --         vim.cmd.colorscheme 'nord'
-    --     end,
-    -- },
-
     {
-        'navarasu/onedark.nvim',
+        'shaunsingh/nord.nvim',
         priority = 1000,
-        opts = {
-            style = 'darker'
-        },
         config = function()
-            require('onedark').setup {
-                style = 'darker'
-            }
-            require('onedark').load()
+            vim.cmd.colorscheme 'nord'
         end,
     },
+
+    -- {
+    --     'navarasu/onedark.nvim',
+    --     priority = 1000,
+    --     opts = {
+    --         style = 'darker'
+    --     },
+    --     config = function()
+    --         require('onedark').setup {
+    --             style = 'darker'
+    --         }
+    --         require('onedark').load()
+    --     end,
+    -- },
     
     {
         -- Set lualine as statusline
@@ -39,6 +39,8 @@ return {
         opts = {
             options = {
                 icons_enabled = false,
+                component_separators = '|',
+                section_separators = '',
                 theme = 'auto',
             },
         },
