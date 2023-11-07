@@ -1,5 +1,5 @@
 # replace ls with exa
-alias ls='exa --group-directories-first'
+alias ls='eza -h --group-directories-first'
 alias ll='ls -l --git'        # Long format, git status
 alias l='ll -a'               # Long format, all files
 alias lr='ll -T'              # Long format, recursive as a tree
@@ -15,4 +15,3 @@ alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 
 alias lg="lazygit"
-alias man="batman"
