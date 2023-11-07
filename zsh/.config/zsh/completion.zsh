@@ -2,9 +2,8 @@ setopt complete_in_word  # Complete from both ends of a word.
 setopt always_to_end     # Move cursor to the end of a completed word.
 setopt no_case_glob      # Make globbing case insensitive.
 
-autoload -Uz compinit
+autoload -Uz compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
-compinit -C -d "$HOME/.config/zsh/zcompdump"
 
 _comp_options+=(globdots) # match files beginning with dots (hidden)
 
@@ -14,7 +13,6 @@ zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 
 # Enable caching
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$HOME/.config/zsh/.zcompcache"
 
 # Group matches and describe.
 zstyle ':completion:*' menu select
@@ -29,5 +27,5 @@ zstyle ':completion:*:warnings' format '%F{red}-- no matches found --%f'
 zstyle ':completion:*' format '%F{yellow}-- %d --%f'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
-# case insensitive (all), partial-word and substring completion
+# case insensitive
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'

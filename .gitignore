@@ -1,4 +1,5 @@
 fish/.config/fish/fish_variables
-zsh/.config/zsh/zcompdump
+zsh/.config/zsh/.zcompdump
+zsh/.config/zsh/.zcompcache
 ssh/.ssh/id_*
 ssh/.ssh/known_hosts
