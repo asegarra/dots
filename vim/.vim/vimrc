@@ -1,0 +1,205 @@
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --CReate-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+let mapleader=' '
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+" Make sure you use single quotes
+
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
+Plug 'sheerun/vim-polyglot'
+Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'voldikss/vim-floaterm'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
+
+set termguicolors
+set background=dark
+colorscheme gruvbox
+
+set noshowmode
+set mouse=a
+set breakindent
+set smartindent
+set ignorecase
+set smartcase
+set completeopt=menu,menuone,noselect
+set clipboard=unnamedplus
+set tabstop=2
+set expandtab
+set ruler
+set number
+set relativenumber
+set showcmd
+set noswapfile
+set nowrap
+set hidden
+set incsearch
+set scrolloff=5
+set wildmenu
+set wildoptions=pum,fuzzy
+set wildignore+=*/.git/*,*/tmp/*,*.swp,*/node_module/*
+" May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
+" utf-8 byte sequence
+set encoding=utf-8
+set fileencoding=utf-8
+set nobackup
+set nowritebackup
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
+set updatetime=300
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved
+set signcolumn=yes
+
+" Show whitespace chars
+set listchars=lead:.,eol:↲,tab:»_,extends:›,precedes:‹,trail:•
+
+" Fixes a weird kitty issue displaying control codes when using devicons
+" https://github.com/ryanoasis/vim-devicons/issues/266
+set t_RV=
+
+" Use a line cursor when in insert mode and block in other modes
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
+
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+" Status line
+let g:airline_experimental=1
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+
+" easier normal mode and consistent with forward/backward repeat moves
+noremap , :
+noremap : ,
+
+" To be consistent with D and C
+nnoremap Y y$
+
+" Easy ESCape?
+inoremap jk <ESC>
+inoremap kj <ESC>
+
+" Center cursor
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap * *zzzv
+nnoremap # #zzzv
+
+" Leave the cursor in place when joining lines
+nnoremap J mzJ`z
+
+" Better copy/paste
+xnoremap <Leader>p "_dP
+nnoremap <Leader>y "+y
+vnoremap <Leader>y "+y
+nnoremap <Leader>Y "+Y
+nnoremap <Leader>d "_d
+
+" Open NERDTree
+nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+
+" Delete current buffer
+nnoremap <silent> <Leader>bd :bdelete<CR>
+
+" Move to window using the <ctrl> hjkl keys
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Source vimrc
+nnoremap <Leader>r :source ~/.vim/vimrc<CR>
+
+" Open lazygit in a floating window
+nnoremap <silent> <Leader>gg :<C-u>FloatermNew --width=0.9 --height=0.9 lazygit<CR>
+
+" FZF search
+nnoremap <silent> <Leader><Space> :Buffers<CR>
+nnoremap <silent> <Leader>sf :Files<CR>
+nnoremap <silent> <Leader>/ :BLines<CR>
+nnoremap <silent> <Leader>sg :RG<CR>
+
+" Save buffer
+nnoremap <silent> <C-s> <Cmd>w<CR><ESC>
+inoremap <silent> <C-s> <Cmd>w<CR><ESC>
+vnoremap <silent> <C-s> <Cmd>w<CR><ESC>
+
+" Move lines up/down
+nnoremap <silent> <A-j> :m .+1<CR>==
+nnoremap <silent> <A-k> :m .-2<CR>==
+inoremap <silent> <A-j> <ESC>:m .+1<CR>==gi
+inoremap <silent> <A-k> <ESC>:m .-2<CR>==gi
+vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
+vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
+
+" Close preview window
+nnoremap <silent> <Leader>p :pc<CR>
+
+" Open quickfix
+nnoremap <silent> <Leader>qo :copen<CR>
+nnoremap <silent> <Leader>qc :cclose<CR>
+
+" Toggle highlight column at cursor
+nnoremap <silent> <Leader>hc :set cursorcolumn!<CR>
+
+" ALE
+let g:ale_fix_on_save = 1
+let g:ale_warn_about_trailing_whitespace = 0
+let g:ale_linters_explicit = 1
+let g:ale_set_balloons = 1
+let g:ale_floating_preview = 1
+let g:ale_hover_cursor = 0
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+
+let g:ale_linters = {
+      \  "typescript": [ "eslint", "tsserver" ],
+      \  "typescriptreact": [ "eslint", "tsserver" ],
+      \}
+
+let g:ale_fixers = {
+      \  "typescript": [ "prettier" ],
+      \  "typescriptreact": [ "prettier" ],
+      \}
+
+nnoremap <silent> gd :ALEGoToDefinition<CR>
+nnoremap <silent> gr :ALEFindReferences<CR>
+nmap <silent> <Leader>aj <Plug>(ale_next_wrap)
+nmap <silent> <Leader>ak <Plug>(ale_previous_wrap)
+nnoremap <silent> <Leader>ar :ALERename<CR>
+vnoremap <silent> <Leader>ar :ALERename<CR>
+nnoremap <silent> <nowait> <Leader>ac :ALECodeAction<CR>
+vnoremap <silent> <nowait> <Leader>ac :ALECodeAction<CR>
+nnoremap <silent> K :ALEHover<CR>
+imap <C-Space> <Plug>(ale_complete)
+nnoremap <silent> <Leader>aq :ALEPopulateQuickfix<CR>

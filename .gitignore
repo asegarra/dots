@@ -3,3 +3,5 @@ zsh/.config/zsh/.zcompdump
 zsh/.config/zsh/.zcompcache
 ssh/.ssh/id_*
 ssh/.ssh/known_hosts
+vim/.vim/autoload
+vim/.vim/plugged
