@@ -29,7 +29,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -93,7 +92,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 
 " Status line
 let g:airline_experimental=1
-let g:airline_powerline_fonts = 1
 let g:airline_skip_empty_sections = 1
 
 " easier normal mode and consistent with forward/backward repeat moves
