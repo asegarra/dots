@@ -34,8 +34,8 @@ Plug 'preservim/nerdtree'
 call plug#end()
 
 set termguicolors
-" set background=dark
-colorscheme habamax
+set background=dark
+colorscheme sorbet
 hi Normal guibg=NONE ctermbg=NONE
 
 set noshowmode
@@ -90,7 +90,27 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 
 " Status line
 let g:airline_experimental=1
-let g:airline_theme='violet'
+let g:airline_theme='base16_grayscale'
+let g:airline_mode_map = {
+    \ '__'     : '-',
+    \ 'c'      : 'C',
+    \ 'i'      : 'I',
+    \ 'ic'     : 'I',
+    \ 'ix'     : 'I',
+    \ 'n'      : 'N',
+    \ 'multi'  : 'M',
+    \ 'ni'     : 'N',
+    \ 'no'     : 'N',
+    \ 'R'      : 'R',
+    \ 'Rv'     : 'R',
+    \ 's'      : 'S',
+    \ 'S'      : 'S',
+    \ '␓'     : 'S',
+    \ 't'      : 'T',
+    \ 'v'      : 'V',
+    \ 'V'      : 'V',
+    \ '␖'     : 'V',
+    \ }
 
 " easier normal mode and consistent with forward/backward repeat moves
 noremap , :
@@ -143,7 +163,8 @@ nnoremap <silent> <Leader>gg :<C-u>FloatermNew --width=0.9 --height=0.9 lazygit<
 nnoremap <silent> <Leader><Space> :Buffers<CR>
 nnoremap <silent> <Leader>sf :Files<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
-nnoremap <silent> <Leader>sg :RG<CR>
+nnoremap <silent> <Leader>sg :GFiles<CR>
+nnoremap <silent> <Leader>sr :RG<CR>
 
 " Save buffer
 nnoremap <silent> <C-s> <Cmd>w<CR><ESC>
