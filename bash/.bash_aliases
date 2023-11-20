@@ -1,6 +1,7 @@
 # Misc
-bat='batcat'
-lg='lazygit'
+alias bat='batcat'
+alias lg='lazygit'
+alias j='journalctl -f'
 
 # Git aliases
 
