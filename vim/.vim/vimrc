@@ -182,9 +182,11 @@ vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 " Close preview window
 nnoremap <silent> <Leader>p :pc<CR>
 
-" Open quickfix
+" Quickfix
 nnoremap <silent> <Leader>qo :copen<CR>
 nnoremap <silent> <Leader>qc :cclose<CR>
+nnoremap <silent> <Leader>j :cn<CR>
+nnoremap <silent> <Leader>k :cp<CR>
 
 " Toggle highlight column at cursor
 nnoremap <silent> <Leader>hc :set cursorcolumn!<CR>
