@@ -49,3 +49,5 @@ vim.o.termguicolors = true
 vim.o.swapfile = false
 
 vim.o.scrolloff = 8
+
+vim.o.showmode = false

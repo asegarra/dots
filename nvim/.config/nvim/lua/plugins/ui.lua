@@ -2,35 +2,23 @@ return {
   -- Useful plugin to show you pending keybinds.
   { "folke/which-key.nvim", opts = {} },
 
-  -- {
-  --     'folke/tokyonight.nvim',
-  --     priority = 1000,
-  --     config = function()
-  --        vim.cmd.colorscheme 'tokyonight-moon'
-  --     end,
-  -- },
-
   {
-    "shaunsingh/nord.nvim",
+    "projekt0n/github-nvim-theme",
+    lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme("nord")
+      require('github-theme').setup({
+        specs = {
+          github_dark = {
+            bg1 = '#232627',
+            bg0 = '#232627',
+            inactive = '#31363b',
+          },
+        },
+      })
+      vim.cmd.colorscheme("github_dark")
     end,
   },
-
-  -- {
-  --     'navarasu/onedark.nvim',
-  --     priority = 1000,
-  --     opts = {
-  --         style = 'darker'
-  --     },
-  --     config = function()
-  --         require('onedark').setup {
-  --             style = 'darker'
-  --         }
-  --         require('onedark').load()
-  --     end,
-  -- },
 
   {
     -- Set lualine as statusline
