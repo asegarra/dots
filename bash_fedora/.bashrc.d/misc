@@ -13,5 +13,5 @@ alias lc='ll -schanged'       # Long format, newest status change (ctime) last
 
 alias lg='lazygit'
 alias j='journalctl -f'
-alias ff='fastfetch'
+alias ff='fastfetch -c paleofetch'
 

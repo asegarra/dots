@@ -24,11 +24,11 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+export PATH="$PATH:$HOME/.local/share/coursier/bin"
+
 # Node version manager
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+eval "$(fnm env --use-on-cd)"
 
 eval "$(zoxide init bash)"
 source /usr/share/fzf/shell/key-bindings.bash
 
-eval "$(starship init bash)"
