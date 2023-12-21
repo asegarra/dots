@@ -24,6 +24,8 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+eval "$(starship init bash)"
+
 export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
 # Node version manager
