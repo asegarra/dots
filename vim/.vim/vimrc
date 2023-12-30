@@ -91,6 +91,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 " Status line
 let g:airline_experimental=1
 let g:airline_theme='base16_grayscale'
+let g:airline_skip_empty_sections=1
 let g:airline_mode_map = {
     \ '__'     : '-',
     \ 'c'      : 'C',
@@ -105,11 +106,11 @@ let g:airline_mode_map = {
     \ 'Rv'     : 'R',
     \ 's'      : 'S',
     \ 'S'      : 'S',
-    \ '␓'     : 'S',
+    \ '␓'      : 'S',
     \ 't'      : 'T',
     \ 'v'      : 'V',
     \ 'V'      : 'V',
-    \ '␖'     : 'V',
+    \ '␖'      : 'V',
     \ }
 
 " easier normal mode and consistent with forward/backward repeat moves
@@ -222,3 +223,6 @@ vnoremap <silent> <nowait> <Leader>ac :ALECodeAction<CR>
 nnoremap <silent> K :ALEHover<CR>
 imap <C-Space> <Plug>(ale_complete)
 nnoremap <silent> <Leader>aq :ALEPopulateQuickfix<CR>
+nnoremap <silent> [d <cmd>ALEPreviousWrap<CR>
+nnoremap <silent> [d <cmd>ALENextWrap<CR>
+
