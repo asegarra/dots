@@ -5,6 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Autoload zsh functions.
+#fpath=(~/.config/zsh/functions $fpath)
+#autoload -U ~/.config/zsh/functions/*(:t)
+
 source $HOME/.config/zsh/env.zsh
 source $HOME/.config/zsh/alias.zsh
 source $HOME/.config/zsh/keys.zsh

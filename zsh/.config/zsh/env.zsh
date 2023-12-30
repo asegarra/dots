@@ -1,5 +1,5 @@
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR='vim'
+export VISUAL='vim'
 export PAGER='less'
 
 # Ensure path arrays do not contain duplicates.
@@ -52,3 +52,4 @@ unsetopt flow_control         # Disable start/stop characters in shell editor.
 setopt interactive_comments   # Allow comments starting with `#` in the interactive shell.
 setopt no_clobber             # Disallow `>` to overwrite existing files. Use `>|` or `>!` instead.
 setopt extended_glob          # Treat `#`, `~`, and `^` as patterns for filename globbing.
+setopt notify                 # Report background job status immediately

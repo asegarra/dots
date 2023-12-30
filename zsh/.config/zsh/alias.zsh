@@ -15,3 +15,4 @@ alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 
 alias lg="lazygit"
+alias j="journalctl -f"
