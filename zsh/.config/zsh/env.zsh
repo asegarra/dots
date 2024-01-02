@@ -12,6 +12,7 @@ path=(
   /opt/local/{,s}bin(N)
   /usr/local/{,s}bin(N)
   $HOME/.cargo/bin
+  $HOME/.local/share/coursier/bin
   $path
 )
 
