@@ -1,0 +1,12 @@
+import = ["/home/angel/.config/alacritty/themes/one_dark.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 11.0
+normal = { family = "Hack Nerd Font" }
+
+[window.padding]
+x = 4
+y = 4
