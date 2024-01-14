@@ -14,11 +14,11 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 
 set $grimshot "/usr/share/sway/scripts/grimshot"
 
-set $font MesloLGS Nerd Font
+set $font Hack Nerd Font
 
 # Application launcher
 set $menu fuzzel --log-level=warning
@@ -301,16 +301,16 @@ bindsym $mod+o mode "$mode_vpn"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-  # font pango:$font 9
-  # position top
-  # status_command i3status-rs
-  # tray_output *
-  # icon_theme Papirus-Dark
-  # separator_symbol "|"
-  # colors {
-  #   separator #abb2bf
-  # }
-  swaybar_command waybar
+  font pango:$font 9
+  position top
+  status_command i3status-rs
+  tray_output *
+  icon_theme Papirus-Dark
+  separator_symbol "|"
+  colors {
+    separator #abb2bf
+  }
+  #swaybar_command waybar
 }
 
 # App rules
@@ -327,7 +327,7 @@ assign [class="Spotify"] 8
 # Gtk settings
 exec_always {
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
-  gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
+  gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
 }
 
 #
