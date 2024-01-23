@@ -57,7 +57,7 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 
-bindkey "^e" history-incremental-search-backward
+# bindkey "^e" history-incremental-search-backward
 bindkey " " magic-space
 
 # Edit the current command line in $EDITOR
