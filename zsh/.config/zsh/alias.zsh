@@ -16,4 +16,3 @@ alias ip='ip --color=auto'
 
 alias lg="lazygit"
 alias j="journalctl -f"
-alias vim="nvim"

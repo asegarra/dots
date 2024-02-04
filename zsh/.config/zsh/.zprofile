@@ -14,3 +14,5 @@ path=(
   $HOME/.local/share/coursier/bin
   $path
 )
+
+eval "$(fnm env --use-on-cd)"
