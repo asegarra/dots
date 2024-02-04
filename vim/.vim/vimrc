@@ -28,6 +28,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -35,8 +36,8 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme sorbet
-hi Normal guibg=NONE ctermbg=NONE
+colorscheme gruvbox
+" hi Normal guibg=NONE ctermbg=NONE
 
 set noshowmode
 set mouse=a
@@ -90,7 +91,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in
 
 " Status line
 let g:airline_experimental=1
-let g:airline_theme='base16_grayscale'
 let g:airline_skip_empty_sections=1
 let g:airline_mode_map = {
     \ '__'     : '-',
