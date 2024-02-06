@@ -1,5 +1,9 @@
 export EDITOR='nvim'
 export VISUAL='nvim'
+export BAT_THEME=gruvbox-dark
+
+# Define LS_COLORS
+eval "$(dircolors --sh)"
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path

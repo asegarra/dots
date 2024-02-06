@@ -1,6 +1,3 @@
-# Define LS_COLORS
-eval "$(dircolors --sh)"
-
 ## History file configuration
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=50000

@@ -9,7 +9,7 @@ fi
 #fpath=(~/.config/zsh/functions $fpath)
 #autoload -U ~/.config/zsh/functions/*(:t)
 
-source $HOME/.config/zsh/env.zsh
+source $HOME/.config/zsh/opts.zsh
 source $HOME/.config/zsh/alias.zsh
 source $HOME/.config/zsh/keys.zsh
 source $HOME/.config/zsh/completion.zsh
