@@ -14,19 +14,20 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term alacritty
+set $term wezterm
 
 set $grimshot "/usr/share/sway/scripts/grimshot"
 
-set $font Hack Nerd Font
+set $font MesloLGS Nerd Font
 
 # Application launcher
 set $menu fuzzel --log-level=warning
 
 # Minimize title bar
-font pango:$font 0
+font pango:$font 9 
+titlebar_padding 4 2
 
-default_border pixel 2
+default_border pixel 1
 default_floating_border pixel 2
 smart_borders no_gaps
 focus_follows_mouse no
@@ -51,6 +52,12 @@ exec swayidle -w
 
 input "type:pointer" {
   scroll_factor 3.0
+  left_handed enabled
+}
+
+input "type:keyboard" {
+  repeat_delay 250
+  repeat_rate 50
 }
 
 #
@@ -264,10 +271,10 @@ bindsym $mod+escape mode "$mode_system"
 
 set $mode_noti Notifications (Return) invoke, (r) restore (d) dismiss, (Shift+d) dismiss all
 mode "$mode_noti" {
-  bindsym return exec makoctl invoke; mode "default"
-  bindsym d exec makoctl dismiss; mode "default"
-  bindsym shift+d exec makoctl dismiss --all; mode "default"
-  bindsym r exec makoctl restore
+  bindsym return exec dunstctl action; mode "default"
+  bindsym d exec dunstctl close; mode "default"
+  bindsym shift+d exec dunstctl close-all; mode "default"
+  bindsym r exec dunstctl history-pop
   bindsym escape mode "default"
 }
 bindsym $mod+n mode "$mode_noti"
@@ -296,12 +303,14 @@ mode "$mode_vpn" {
 }
 bindsym $mod+o mode "$mode_vpn"
 
+include colorscheme
+
 #
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-  font pango:$font 9
+  font pango:$font 8
   position top
   status_command i3status-rs
   tray_output *
@@ -327,13 +336,12 @@ assign [class="Spotify"] 8
 # Gtk settings
 exec_always {
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
-  gsettings set org.gnome.desktop.interface font-name "Cantarell 11"
 }
 
 #
 # Autostart apps
 #
-exec mako
+exec dunst
 exec gammastep
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/lib/geoclue-2.0/demos/agent
