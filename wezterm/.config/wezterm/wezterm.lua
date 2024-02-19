@@ -4,7 +4,7 @@ local wezterm = require 'wezterm'
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
-config.font = wezterm.font('BlexMono Nerd Font Medium')
+config.font = wezterm.font('JetBrainsMono NF Medium')
 config.font_size = 10.0
 --config.freetype_load_flags = 'DEFAULT'
 config.freetype_load_target = 'Light'
