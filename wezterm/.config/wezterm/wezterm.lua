@@ -12,6 +12,7 @@ config.freetype_render_target = 'HorizontalLcd'
 config.hide_tab_bar_if_only_one_tab = true
 
 config.color_scheme = 'Catppuccin Frappe'
+config.use_fancy_tab_bar = false
 config.window_frame = {
   font = wezterm.font { family = 'Cantarell', weight = 'Bold' },
   font_size = 10.0,
