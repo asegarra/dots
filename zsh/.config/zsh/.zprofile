@@ -1,6 +1,6 @@
-export EDITOR='nvim'
-export VISUAL='nvim'
-export BAT_THEME=gruvbox-dark
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BAT_THEME="TwoDark"
 
 # Define LS_COLORS
 eval "$(dircolors --sh)"
