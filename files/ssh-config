@@ -1,0 +1,4 @@
+AddKeysToAgent yes
+Host gitlab.com
+  IdentityFile ~/.ssh/vmg_rsa
+  IdentitiesOnly yes
