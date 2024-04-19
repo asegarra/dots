@@ -24,13 +24,16 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-eval "$(starship init bash)"
+#eval "$(starship init bash)"
 
-export PATH="$PATH:$HOME/.local/share/coursier/bin"
+#export PATH="$PATH:$HOME/.local/share/coursier/bin"
 
 # Node version manager
-eval "$(fnm env --use-on-cd)"
+export N_PREFIX="$HOME/n"
+export PATH="$PATH:$N_PREFIX/bin"
 
 eval "$(zoxide init bash)"
 source /usr/share/fzf/shell/key-bindings.bash
 
+export GOPATH=$HOME/go
+export PATH="$PATH:$GOPATH/bin"
