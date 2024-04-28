@@ -1,6 +1,6 @@
 # Replace ls with exa
 
-alias ls='exa -h --group-directories-first'
+alias ls='eza -h --group-directories-first'
 alias ll='ls -l --git'        # Long format, git status
 alias l='ll -a'               # Long format, all files
 alias lr='ll -T'              # Long format, recursive as a tree

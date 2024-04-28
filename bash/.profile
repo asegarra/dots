@@ -4,9 +4,9 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
-# the default umask is set in /etc/profile; for setting the umask
-# for ssh logins, install and configure the libpam-umask package.
-#umask 022
+   
+
+
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -28,5 +28,11 @@ fi
 
 # node version manager
 export N_PREFIX="$HOME/.n"
-export PATH="$N_PREFIX/bin:$PATH"
+if [ -d "$N_PREFIX/bin" ] ; then
+    PATH="$N_PREFIX/bin:$PATH"
+fi
+
+if [ -d "/usr/local/go/bin" ] ; then
+    PATH="/usr/local/go/bin:$PATH"
+fi
 
