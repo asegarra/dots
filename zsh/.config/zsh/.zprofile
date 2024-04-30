@@ -19,8 +19,6 @@ path=(
   $path
 )
 
-eval "$(fnm env --use-on-cd)"
-
 # eval $(keychain --eval --noask --quiet id_ed25519)
 
 # Start graphical wayland session

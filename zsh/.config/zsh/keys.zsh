@@ -1,4 +1,4 @@
-bindkey -e
+bindkey -v
 
 # External editor
 autoload -U edit-command-line
