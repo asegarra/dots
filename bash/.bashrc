@@ -117,4 +117,3 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(zoxide init bash)"
-source /usr/share/doc/fzf/examples/key-bindings.bash
