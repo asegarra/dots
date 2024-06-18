@@ -35,3 +35,5 @@ fi
 if [ -d "/usr/local/go/bin" ] ; then
     PATH="/usr/local/go/bin:$PATH"
 fi
+
+PATH="$HOME/go/bin:$PATH"
