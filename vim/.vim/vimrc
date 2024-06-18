@@ -202,8 +202,8 @@ let g:ale_linters = {
       \}
 
 let g:ale_fixers = {
-      \  "typescript": [ "prettier" ],
-      \  "typescriptreact": [ "prettier" ],
+      \  "typescript": [ "prettier", "eslint" ],
+      \  "typescriptreact": [ "prettier", "eslint" ],
       \}
 
 nnoremap <silent> gd :ALEGoToDefinition<CR>
