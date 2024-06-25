@@ -60,7 +60,9 @@ alias la="ls --color -la"
 alias lt="ls --sort=time"
 alias lat="ls --color -la --sort=time"
 
-alias rh='fc -R'
+alias rh="fc -R"
+
+alias lg="lazygit"
 
 autoload run-help
 
