@@ -148,14 +148,16 @@ if [[ "$TERM" == xterm* ]] ; then
 fi
 
 # prompt
-if [[ "$USER" == "root" ]] ; then
-	PROMPT=$'%B%F{red}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
-else
-	preexec_functions+='preexec_update_git_vars'
-	precmd_functions+='precmd_update_git_vars'
-	chpwd_functions+='chpwd_update_git_vars'
-	PROMPT=$'%B%F{green}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{yellow}$(prompt_git_info)%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
-fi
+eval "$(starship init zsh)"
+
+# if [[ "$USER" == "root" ]] ; then
+# 	PROMPT=$'%B%F{red}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
+# else
+# 	preexec_functions+='preexec_update_git_vars'
+# 	precmd_functions+='precmd_update_git_vars'
+# 	chpwd_functions+='chpwd_update_git_vars'
+# 	PROMPT=$'%B%F{green}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{yellow}$(prompt_git_info)%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
+# fi
 
 # tab-completion
 autoload -Uz compinit bashcompinit
