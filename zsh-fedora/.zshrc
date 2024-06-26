@@ -130,7 +130,7 @@ setopt \
 
 # modules
 autoload -U url-quote-magic bracketed-paste-magic
-zle -N self-insert url-quote-magic
+#zle -N self-insert url-quote-magic
 zle -N bracketed-paste bracketed-paste-magic
 
 # Enable auto-execution of functions.
