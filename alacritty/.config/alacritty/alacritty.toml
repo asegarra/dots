@@ -1,11 +1,11 @@
-import = ["/home/angel/.config/alacritty/themes/one_dark.toml"]
+import = ["/home/angel/.config/alacritty/themes/catppuccin-mocha.toml"]
 
 [env]
 TERM = "xterm-256color"
 
 [font]
 size = 10.0
-normal = { family = "RobotoMono Nerd Font" }
+normal = { family = "JetBrains Mono Nerd Font" }
 
 [window]
 padding = { x = 4, y = 4}
