@@ -1,12 +1,11 @@
 * {
-  font-family: JetBrainsMono Nerd Font;
+  font-family: FontAwesome, JetBrainsMono Nerd Font;
   font-size: 12px;
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 1);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-  color: #abb2bf;
+  background-color: #1f1e22;
+  color: #cdd6f4;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -26,13 +25,14 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
   background: inherit;
-  box-shadow: inset 0 -3px #abb2bf;
+  box-shadow: inherit;
+  text-shadow: inherit;
 }
 
 #workspaces button {
   padding: 0 5px;
   background-color: transparent;
-  color: #ffffff;
+  color: #cdd6f4;
 }
 
 #workspaces button:hover {
@@ -40,16 +40,14 @@ button:hover {
 }
 
 #workspaces button.focused {
-  background-color: #64727d;
   box-shadow: inset 0 -3px #abb2bf;
 }
 
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #mode {
-  border-bottom: 3px solid #f7ca88;
   color: #f7ca88;
 }
 
@@ -90,7 +88,7 @@ button:hover {
 }
 
 #network.disconnected {
-  background-color: #ab4642;
+  color: #ab4642;
 }
 
 #temperature.critical {
