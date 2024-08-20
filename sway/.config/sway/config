@@ -14,29 +14,30 @@ set $up k
 set $right l
 
 # Your preferred terminal emulator
-set $term wezterm
+set $term alacritty
 
 set $grimshot "/usr/share/sway/scripts/grimshot"
 
-set $font MesloLGS Nerd Font
+set $font DejaVu Sans
 
 # Application launcher
-set $menu fuzzel --log-level=warning
+#set $menu fuzzel --log-level=warning
+set $menu wmenu-run -i
 
 # Minimize title bar
 font pango:$font 9 
 titlebar_padding 4 2
 
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 2
 smart_borders no_gaps
 focus_follows_mouse no
 
 ### Output configuration
 #
-output DP-1 {
+output HDMI-A-1 {
   bg ~/.config/sway/wallpapers/blobs-d.svg fill
-  mode 3440x1440@143.975Hz 
+  mode 3440x1440@100Hz 
 }
 
 # Screen locker
@@ -310,16 +311,15 @@ include colorscheme
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-  font pango:$font 8
-  position top
-  status_command i3status-rs
-  tray_output *
-  icon_theme Papirus-Dark
-  separator_symbol "|"
-  colors {
-    separator #abb2bf
-  }
-  #swaybar_command waybar
+  # font pango:$font 8
+  # position bottom
+  # status_command i3status-rs
+  # tray_output *
+  # separator_symbol "|"
+  # colors {
+  #   separator #abb2bf
+  # }
+  swaybar_command waybar
 }
 
 # App rules
@@ -336,16 +336,18 @@ assign [class="Spotify"] 8
 # Gtk settings
 exec_always {
   gsettings set org.gnome.desktop.interface font-antialiasing "rgba"
-}
+  gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+  gsettings set org.gnome.desktop.interface font-name 'Noto Sans 10'
+ }
 
 #
 # Autostart apps
 #
-exec dunst
-exec gammastep
+exec mako
+# exec gammastep
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec /usr/lib/geoclue-2.0/demos/agent
-exec playerctld daemon
+exec playerctld daemon -p spotify
 #exec wl-paste -t text --watch clipman store --no-persist
 #exec poweralertd
 
