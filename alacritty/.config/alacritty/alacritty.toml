@@ -1,4 +1,4 @@
-import = ["/home/angel/.config/alacritty/themes/catppuccin-mocha.toml"]
+import = ["/home/angel/.config/alacritty/themes/gruvbox_dark.toml"]
 
 [env]
 TERM = "xterm-256color"
