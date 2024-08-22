@@ -196,7 +196,8 @@ _comp_options=("${(@)_comp_options:#NO_ignoreclosebraces}")
 [[ -e ~/.shfuncs ]] && source ~/.shfuncs
 
 # Environment
-export N_PREFIX=$HOME/n
+eval "$(fnm env --use-on-cd --shell zsh)"
+export CHROME_EXECUTABLE=/opt/google/chrome/chrome
 
 # Set the list of directories that Zsh searches for programs.
 path=(
@@ -204,6 +205,7 @@ path=(
   /usr/local/go/bin
   $HOME/go/bin
   $HOME/.local/share/coursier/bin
+  $HOME/development/flutter/bin
   $path
 )
 
