@@ -26,14 +26,5 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# node version manager
-export N_PREFIX="$HOME/n"
-if [ -d "$N_PREFIX/bin" ] ; then
-    PATH="$N_PREFIX/bin:$PATH"
-fi
+eval "$(fnm env --use-on-cd --shell bash)"
 
-if [ -d "/usr/local/go/bin" ] ; then
-    PATH="/usr/local/go/bin:$PATH"
-fi
-
-PATH="$HOME/go/bin:$PATH"
