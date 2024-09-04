@@ -59,9 +59,6 @@ else
 fi
 
 echo "Setting up GNOME"
-gsettings set org.gnome.desktop.interface font-name 'Noto Sans 10'
-gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
-gsettings set org.gnome.shell.app-switcher current-workspace-only 'true'
 gsettings set org.gnome.shell disabled-extensions "['background-logo@fedorahosted.org']"
 
 echo "All done."
