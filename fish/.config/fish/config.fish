@@ -19,4 +19,4 @@ abbr --add !! --position anywhere --function last_history_item
 
 zoxide init fish | source
 fnm env --use-on-cd | source
-starship init fish | source
+# starship init fish | source
