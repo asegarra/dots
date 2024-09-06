@@ -3,7 +3,7 @@ if not status --is-interactive
 end
 
 set -g fish_greeting
-set -gx EDITOR nvim
+set -gx EDITOR vim
 
 fish_add_path ~/.local/share/coursier/bin
 fish_add_path ~/.local/bin
