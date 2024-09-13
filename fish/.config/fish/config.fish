@@ -13,6 +13,7 @@ fish_add_path ~/go/bin
 
 alias lg="lazygit"
 alias j="journalctl -f"
+alias v="vim"
 
 abbr --add dotdot --regex '^\.\.+$' --function multicd
 abbr --add !! --position anywhere --function last_history_item
