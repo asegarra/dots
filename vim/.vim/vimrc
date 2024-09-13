@@ -30,7 +30,7 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme catppuccin_latte
+colorscheme catppuccin_mocha
 " hi Normal guibg=NONE ctermbg=NONE
 
 set noshowmode
@@ -83,7 +83,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
-let g:lightline = {'colorscheme': 'catppuccin_latte'}
+let g:lightline = {'colorscheme': 'catppuccin_mocha'}
 
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
