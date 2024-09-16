@@ -150,14 +150,14 @@ typeset -ga chpwd_functions
 # fi
 
 # prompt
-if [[ "$USER" == "root" ]] ; then
-	PROMPT=$'%B%F{red}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
-else
-	preexec_functions+='preexec_update_git_vars'
-	precmd_functions+='precmd_update_git_vars'
-	chpwd_functions+='chpwd_update_git_vars'
-	PROMPT=$'%B%F{green}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{yellow}$(prompt_git_info)%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
-fi
+# if [[ "$USER" == "root" ]] ; then
+# 	PROMPT=$'%B%F{red}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
+# else
+# 	preexec_functions+='preexec_update_git_vars'
+# 	precmd_functions+='precmd_update_git_vars'
+# 	chpwd_functions+='chpwd_update_git_vars'
+# 	PROMPT=$'%B%F{green}%n%b%F{default}@%B%F{cyan}%m%b%F{default}:%B%F{blue}%~%b%F{default}%F{yellow}$(prompt_git_info)%F{default} %(?.-.%F{red}%?%F{default})%(!.%F{red}#%F{default}.%F{green}$%F{default}) '
+# fi
 
 # tab-completion
 autoload -Uz compinit bashcompinit
@@ -196,6 +196,7 @@ _comp_options=("${(@)_comp_options:#NO_ignoreclosebraces}")
 [[ -e ~/.shfuncs ]] && source ~/.shfuncs
 
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
