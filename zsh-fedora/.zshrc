@@ -64,6 +64,8 @@ alias rh="fc -R"
 
 alias lg="lazygit"
 
+alias v="vim"
+
 autoload run-help
 
 # zsh parameters
