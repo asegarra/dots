@@ -142,10 +142,10 @@ typeset -ga precmd_functions
 typeset -ga chpwd_functions
 
 # Terminal title
-if [[ "$TERM" == xterm* ]] ; then
-  preexec_functions+='preexec_term_title'
-  precmd_functions+='precmd_term_title'
-fi
+# if [[ "$TERM" == xterm* ]] ; then
+#   # preexec_functions+='preexec_term_title'
+#   # precmd_functions+='precmd_term_title'
+# fi
 
 # prompt
 if [[ "$USER" == "root" ]] ; then
