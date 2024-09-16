@@ -22,7 +22,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
-Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+Plug 'chriskempson/base16-vim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -30,7 +30,7 @@ call plug#end()
 
 set termguicolors
 set background=dark
-colorscheme catppuccin_mocha
+colorscheme base16-tomorrow-night
 " hi Normal guibg=NONE ctermbg=NONE
 
 set noshowmode
@@ -83,7 +83,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
     \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
 
-let g:lightline = {'colorscheme': 'catppuccin_mocha'}
+let g:lightline = {'colorscheme': 'Tomorrow_Night'}
 
 let g:lightline.component_expand = {
       \  'linter_checking': 'lightline#ale#checking',
