@@ -28,3 +28,5 @@ fi
 
 eval "$(fnm env --use-on-cd --shell bash)"
 
+PATH="$PATH:/opt/nvim-linux64/bin"
+
