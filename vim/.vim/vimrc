@@ -23,6 +23,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'preservim/nerdtree'
 Plug 'chriskempson/base16-vim'
+Plug 'jasonccox/vim-wayland-clipboard'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -133,18 +134,21 @@ nnoremap # #zzzv
 " Leave the cursor in place when joining lines
 nnoremap J mzJ`z
 
-" Better copy/paste
-xnoremap <Leader>p "_dP
-nnoremap <Leader>y "+y
-vnoremap <Leader>y "+y
-nnoremap <Leader>Y "+Y
-nnoremap <Leader>d "_d
+" Copy/paste wayland
+nmap <leader>y "+y
+xmap <leader>y "+y
+nmap <leader>p "+p
+xmap <leader>p "+p
+
+" Do not overwrite previous yank
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
 
 " Open NERDTree
-nnoremap <silent> <Leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
 
 " Delete current buffer
-nnoremap <silent> <Leader>bd :bdelete<CR>
+nnoremap <silent> <leader>bd :bdelete<CR>
 
 " Move to window using the <ctrl> hjkl keys
 nnoremap <C-h> <C-w>h
@@ -153,17 +157,17 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Source vimrc
-nnoremap <Leader>r :source ~/.vim/vimrc<CR>
+nnoremap <leader>r :source ~/.vim/vimrc<CR>
 
 " Open lazygit in a floating window
-nnoremap <silent> <Leader>gg :<C-u>FloatermNew --width=0.9 --height=0.9 lazygit<CR>
+nnoremap <silent> <leader>gg :<C-u>FloatermNew --width=0.9 --height=0.9 lazygit<CR>
 
 " FZF search
-nnoremap <silent> <Leader><Space> :Buffers<CR>
-nnoremap <silent> <Leader>sf :Files<CR>
-nnoremap <silent> <Leader>/ :BLines<CR>
-nnoremap <silent> <Leader>sg :GFiles<CR>
-nnoremap <silent> <Leader>sr :RG<CR>
+nnoremap <silent> <leader><Space> :Buffers<CR>
+nnoremap <silent> <leader>sf :Files<CR>
+nnoremap <silent> <leader>/ :BLines<CR>
+nnoremap <silent> <leader>sg :GFiles<CR>
+nnoremap <silent> <leader>sr :RG<CR>
 
 " Save buffer
 nnoremap <silent> <C-s> <Cmd>w<CR><ESC>
@@ -179,16 +183,16 @@ vnoremap <silent> <A-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <A-k> :m '<-2<CR>gv=gv
 
 " Close preview window
-nnoremap <silent> <Leader>p :pc<CR>
+nnoremap <silent> <leader>p :pc<CR>
 
 " Quickfix
-nnoremap <silent> <Leader>qo :copen<CR>
-nnoremap <silent> <Leader>qc :cclose<CR>
-nnoremap <silent> <Leader>j :cn<CR>
-nnoremap <silent> <Leader>k :cp<CR>
+nnoremap <silent> <leader>qo :copen<CR>
+nnoremap <silent> <leader>qc :cclose<CR>
+nnoremap <silent> <leader>j :cn<CR>
+nnoremap <silent> <leader>k :cp<CR>
 
 " Toggle highlight column at cursor
-nnoremap <silent> <Leader>hc :set cursorcolumn!<CR>
+nnoremap <silent> <leader>hc :set cursorcolumn!<CR>
 
 " ALE
 let g:ale_fix_on_save = 1
@@ -212,15 +216,15 @@ let g:ale_fixers = {
 
 nnoremap <silent> gd :ALEGoToDefinition<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
-nmap <silent> <Leader>aj <Plug>(ale_next_wrap)
-nmap <silent> <Leader>ak <Plug>(ale_previous_wrap)
-nnoremap <silent> <Leader>ar :ALERename<CR>
-vnoremap <silent> <Leader>ar :ALERename<CR>
-nnoremap <silent> <nowait> <Leader>ac :ALECodeAction<CR>
-vnoremap <silent> <nowait> <Leader>ac :ALECodeAction<CR>
+nmap <silent> <leader>aj <Plug>(ale_next_wrap)
+nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
+nnoremap <silent> <leader>ar :ALERename<CR>
+vnoremap <silent> <leader>ar :ALERename<CR>
+nnoremap <silent> <nowait> <leader>ac :ALECodeAction<CR>
+vnoremap <silent> <nowait> <leader>ac :ALECodeAction<CR>
 nnoremap <silent> K :ALEHover<CR>
 imap <C-Space> <Plug>(ale_complete)
-nnoremap <silent> <Leader>aq :ALEPopulateQuickfix<CR>
+nnoremap <silent> <leader>aq :ALEPopulateQuickfix<CR>
 nnoremap <silent> [d <cmd>ALEPreviousWrap<CR>
 nnoremap <silent> [d <cmd>ALENextWrap<CR>
 
