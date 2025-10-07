@@ -17,13 +17,18 @@ key[PageDown]=${terminfo[knp]}
 key[Control-Left]="${terminfo[kLFT5]}"
 key[Control-Right]="${terminfo[kRIT5]}"
 
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
 # setup key accordingly
 [[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
 [[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
-[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      history-beginning-search-backward
-[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    history-beginning-search-forward
+[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      up-line-or-beginning-search 
+[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-beginning-search
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 [[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
@@ -66,6 +71,8 @@ alias lg="lazygit"
 
 alias v="vim"
 
+alias bat="bat"
+
 autoload run-help
 
 # zsh parameters
@@ -75,7 +82,7 @@ typeset -U path fpath
 DIRSTACKSIZE=60
 
 # Autoload zsh functions.
-fpath=(~/.zsh/functions $fpath)
+fpath=(~/.zsh/functions ~/.zsh/plugins/zsh-completions/src $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
 fignore=(\~)
@@ -132,7 +139,7 @@ setopt \
 
 # modules
 autoload -U url-quote-magic bracketed-paste-magic
-#zle -N self-insert url-quote-magic
+zle -N self-insert url-quote-magic
 zle -N bracketed-paste bracketed-paste-magic
 
 # Enable auto-execution of functions.
@@ -197,8 +204,12 @@ _comp_options=("${(@)_comp_options:#NO_ignoreclosebraces}")
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+eval "$(fnm env --use-on-cd --shell zsh)"
+
+source "$HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "$HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 setopt notify
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

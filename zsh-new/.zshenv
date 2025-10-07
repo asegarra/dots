@@ -1,5 +1,5 @@
 # Environment
-eval "$(fnm env --use-on-cd --shell zsh)"
+# eval "$(fnm env --use-on-cd --shell zsh)"
 
 # Flutter
 export CHROME_EXECUTABLE=/opt/google/chrome/chrome
@@ -11,5 +11,7 @@ path=(
   $HOME/go/bin
   $HOME/.local/share/coursier/bin
   $HOME/development/flutter/bin
+  $HOME/.local/share/fnm
+  /opt/nvim/bin
   $path
 )
